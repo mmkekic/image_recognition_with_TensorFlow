@@ -1,5 +1,4 @@
 # tensorflow-exercise
-simple CNN for image classification
-The code serves for image classification of three Barcelona football players, data provided as exercise by Methinks software company.
-dataset.py contains DataSet class that serves to read divide dataset in train, test and validation data and make batches of train data. It also reads labeling of the data given in the file name.
-train.py builds CNN and train it on the data, as well as testing it preformance on validation data.
+This is a simple CNN for classification of three Barcelona football players, data provided as exercise by Methinks software company. Code is divided in two files.
+dataset.py contains DataSet class that serves to read and divide dataset in train, test and validation data and make batches of train data. It also reads labeling of the data given in the file name. I also add some random image distortion (zoom, translation, change lightening)to augment data using scikit-image library.
+train.py builds CNN (conv_neural_net function) and train (train_model function) it on the data. Overfitting is avoided using dropout, L2 regularization and early stopping (when error on validation data gets to its minimum). Finally,  test_model function loads previously saved trained model and caclulate accuracy on the test data.
